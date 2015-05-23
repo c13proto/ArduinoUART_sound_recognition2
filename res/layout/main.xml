@@ -1,0 +1,237 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/base"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".MainActivity" >
+
+    <LinearLayout
+        android:id="@+id/UART"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/android"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="android" />
+
+        <TextView
+            android:id="@+id/arduino"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:text="arduino" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:orientation="vertical" >
+
+            <TextView
+                android:id="@+id/textView1"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="↓HSV"
+                android:textAppearance="?android:attr/textAppearanceMedium" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1" >
+
+                <SeekBar
+                    android:id="@+id/H_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="180"
+                    android:progress="50" />
+
+                <SeekBar
+                    android:id="@+id/S_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="255"
+                    android:progress="50" />
+
+                <SeekBar
+                    android:id="@+id/V_min"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="255"
+                    android:progress="50" />
+
+            </LinearLayout>
+
+            <ImageView
+                android:id="@+id/imageView1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_weight="1"
+                android:src="@drawable/sikisou" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+
+                <SeekBar
+                    android:id="@+id/H_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="180"
+                    android:progress="90" />
+
+                <SeekBar
+                    android:id="@+id/S_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="255"
+                    android:progress="255" />
+
+                <SeekBar
+                    android:id="@+id/V_max"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:max="255"
+                    android:progress="255" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent" 
+                android:layout_weight="1">
+
+                <TextView
+                    android:id="@+id/hsv"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="1"
+                    android:text="center_HSV"
+                    android:textColor="@color/white" />
+
+                <EditText
+                    android:id="@+id/split_pixel"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:inputType="number"
+                    android:text="4" 
+                    android:textSize="10sp">
+
+                    <requestFocus />
+                </EditText>
+
+            </LinearLayout>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/DEBUG"
+       android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_weight="1"
+        android:orientation="horizontal" >
+		<ScrollView  
+		  android:id="@+id/ScrollView_debug"  
+		  android:layout_height="fill_parent"  
+		  android:layout_width="fill_parent"
+		  android:layout_weight="1">  
+		  
+		            <TextView
+		                android:id="@+id/debug"
+		                android:layout_width="match_parent"
+		                android:layout_height="match_parent"
+		                android:layout_weight="1"
+		                android:text="debug"
+		                android:textSize="20sp" />
+		  
+		</ScrollView>  
+
+		<ScrollView  
+		  android:id="@+id/ScrollView_checkBox"  
+		  android:layout_height="fill_parent"  
+		  android:layout_width="fill_parent"
+		  android:layout_weight="3">  
+		  
+
+		    <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:orientation="vertical" >
+
+	            <CheckBox
+	                android:id="@+id/orientation"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_weight="1"
+	                android:text="傾き"
+	                android:textSize="20sp" />
+	
+	            <CheckBox
+	                android:id="@+id/acceleration"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:text="加速度"
+	                android:layout_weight="1"
+	                android:textSize="20sp" />
+	
+	            <CheckBox
+	                android:id="@+id/magnetic"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_weight="1"
+	                android:text="地磁気"
+	                android:textSize="20sp" />
+	            <CheckBox
+	                android:id="@+id/voice_recog"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_weight="1"
+	                android:text="音声認識"
+	                android:textSize="20sp" />
+	
+	            <CheckBox
+	                android:id="@+id/color_info"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:layout_weight="1"
+	                android:text="検出情報"
+	                android:textSize="20sp" />
+	
+	            <CheckBox
+	                android:id="@+id/dualshock3"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:text="pad"
+	                android:layout_weight="1"
+	                android:textSize="20sp" />
+	            <CheckBox
+	                android:id="@+id/progress_bar"
+	                android:layout_width="wrap_content"
+	                android:layout_height="match_parent"
+	                android:text="プログレスバー"
+	                android:layout_weight="1"
+	                android:textSize="20sp" />
+
+       		 </LinearLayout>
+		</ScrollView>  
+
+
+    </LinearLayout>
+
+</LinearLayout>
